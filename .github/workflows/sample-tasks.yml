@@ -17,10 +17,15 @@ on:
   pull_request:
     branches: [ main ]
 
+permissions:
+  contents: read
+
 jobs:
   hello-task:
     name: Hello Task
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
     if: github.event.inputs.task_type == 'hello' || github.event_name != 'workflow_dispatch'
     steps:
       - name: Checkout code
@@ -32,6 +37,8 @@ jobs:
   long-running-task:
     name: Long Running Task
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
     if: github.event.inputs.task_type == 'long-running'
     steps:
       - name: Checkout code
@@ -49,6 +56,8 @@ jobs:
   failing-task:
     name: Failing Task
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
     if: github.event.inputs.task_type == 'failing-task'
     steps:
       - name: Checkout code
@@ -62,6 +71,8 @@ jobs:
   test-all-samples:
     name: Test All Sample Tasks
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
     if: github.event_name != 'workflow_dispatch'
     steps:
       - name: Checkout code
