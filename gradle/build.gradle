@@ -38,7 +38,7 @@ task failingTask {
     }
 }
 
-task build {
+task customBuild {
     doLast {
         println 'Building with Gradle...'
         sleep(2000)
@@ -46,7 +46,7 @@ task build {
     }
 }
 
-task test {
+task customTest {
     doLast {
         println 'Running tests with Gradle...'
         println 'Tests passed!'

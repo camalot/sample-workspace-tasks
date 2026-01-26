@@ -4,7 +4,7 @@
   "description": "Sample Node.js tasks for testing VSCode task runner",
   "scripts": {
     "hello": "echo 'Hello from Node.js!'",
-    "long-running": "node -e \"console.log('Starting long task...'); setTimeout(() => console.log('Task completed!'), 10000)\"",
+    "long-running": "node -e \"console.log('Starting long task...'); setTimeout(() => { console.log('Task completed!'); process.exit(0); }, 10000)\"",
     "failing-task": "node -e \"console.log('This task will fail...'); process.exit(1)\"",
     "build": "echo 'Building project...' && sleep 2 && echo 'Build complete!'",
     "test": "echo 'Running tests...' && echo 'All tests passed!'",

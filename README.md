@@ -164,8 +164,8 @@ Gradle build script with custom tasks.
 - `gradle hello` - Simple hello world
 - `gradle longRunning` - 10-second task
 - `gradle failingTask` - Intentionally fails
-- `gradle build` - Build task
-- `gradle test` - Test task
+- `gradle customBuild` - Build task
+- `gradle customTest` - Test task
 
 **Usage:**
 ```bash
