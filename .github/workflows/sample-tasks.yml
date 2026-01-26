@@ -1,0 +1,98 @@
+name: Sample Tasks Workflow
+
+on:
+  workflow_dispatch:
+    inputs:
+      task_type:
+        description: 'Type of task to run'
+        required: true
+        default: 'hello'
+        type: choice
+        options:
+          - hello
+          - long-running
+          - failing-task
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  hello-task:
+    name: Hello Task
+    runs-on: ubuntu-latest
+    if: github.event.inputs.task_type == 'hello' || github.event_name != 'workflow_dispatch'
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      - name: Run Hello Task
+        run: echo "Hello from GitHub Actions!"
+
+  long-running-task:
+    name: Long Running Task
+    runs-on: ubuntu-latest
+    if: github.event.inputs.task_type == 'long-running'
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      - name: Run Long Running Task
+        run: |
+          echo "Starting long running GitHub Actions task..."
+          for i in {1..10}; do
+            echo "Progress: $i/10"
+            sleep 1
+          done
+          echo "Long running task completed!"
+
+  failing-task:
+    name: Failing Task
+    runs-on: ubuntu-latest
+    if: github.event.inputs.task_type == 'failing-task'
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      - name: Run Failing Task
+        run: |
+          echo "This GitHub Actions task will fail..."
+          exit 1
+
+  test-all-samples:
+    name: Test All Sample Tasks
+    runs-on: ubuntu-latest
+    if: github.event_name != 'workflow_dispatch'
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+      
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+      
+      - name: Test Shell Scripts
+        run: |
+          chmod +x shell/*.sh
+          ./shell/hello.sh
+      
+      - name: Test Python Script
+        run: |
+          chmod +x python/tasks.py
+          ./python/tasks.py hello
+      
+      - name: Test Makefile
+        run: |
+          cd makefile
+          make hello
+      
+      - name: Test Node.js Scripts
+        run: |
+          cd nodejs
+          npm run hello

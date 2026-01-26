@@ -1,0 +1,54 @@
+plugins {
+    id 'java'
+}
+
+group = 'com.example'
+version = '1.0.0'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation 'junit:junit:4.13.2'
+}
+
+// Custom tasks for testing VSCode task runner
+task hello {
+    doLast {
+        println 'Hello from Gradle!'
+    }
+}
+
+task longRunning {
+    doLast {
+        println 'Starting long running Gradle task...'
+        (1..10).each { i ->
+            println "Progress: ${i}/10"
+            sleep(1000)
+        }
+        println 'Long running task completed!'
+    }
+}
+
+task failingTask {
+    doLast {
+        println 'This Gradle task will fail...'
+        throw new GradleException('Simulated task failure')
+    }
+}
+
+task build {
+    doLast {
+        println 'Building with Gradle...'
+        sleep(2000)
+        println 'Build successful!'
+    }
+}
+
+task test {
+    doLast {
+        println 'Running tests with Gradle...'
+        println 'Tests passed!'
+    }
+}

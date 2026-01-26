@@ -1,0 +1,9 @@
+{
+  "name": "grunt-sample-tasks",
+  "version": "1.0.0",
+  "description": "Sample Grunt tasks for testing VSCode task runner",
+  "devDependencies": {
+    "grunt": "^1.6.1",
+    "grunt-shell": "^4.0.0"
+  }
+}
