@@ -338,6 +338,17 @@ Depending on which samples you want to run, you may need:
 - **Just**: For Justfile samples (needs separate installation)
 - **PowerShell**: For PowerShell samples (pre-installed on Windows, available for Linux/macOS)
 
+## ⚠️ Platform Compatibility
+
+Some samples use platform-specific commands for demonstration purposes:
+
+- **Shell scripts** (`.sh`): Designed for Linux/macOS with Bash
+- **Batch files** (`.bat`): Designed for Windows Command Prompt
+- **PowerShell scripts** (`.ps1`): Cross-platform with PowerShell Core, or Windows PowerShell
+- **Makefile, Justfile, Node.js tasks**: Some use Unix-specific commands (e.g., `sleep`) and may need adaptation for Windows
+
+This variety is intentional to provide comprehensive testing scenarios for VSCode extensions across different platforms and task types.
+
 ## 📝 License
 
 This is a sample repository for testing purposes. Feel free to use and modify as needed.
