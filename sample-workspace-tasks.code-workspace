@@ -20,6 +20,6 @@
 		},
 		"terminal.integrated.defaultProfile.windows": "PowerShell",
 		"workspaceTasks.groups.taskSeparator": ":",
-		"workspaceTasks.recentTasks.maxItems": 5
+		"workspaceTasks.recentTasks.maxItems": 0
 	}
 }
