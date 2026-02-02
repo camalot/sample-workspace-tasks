@@ -5,12 +5,37 @@
       "label": "VSCode: Hello",
       "type": "shell",
       "command": "echo",
-      "args": ["Hello from VSCode tasks!"],
+      "args": [
+        "Hello from VSCode tasks!"
+      ],
       "problemMatcher": [],
       "presentation": {
+        "echo": false,
+        "group": "MyGroup",
         "reveal": "always",
-        "panel": "new"
+        "focus": true,
+        "panel": "shared",
+        "showReuseMessage": false,
+        "clear": true
       }
+    },
+    {
+      "label": "VSCode: Hello Again",
+      "type": "shell",
+      "command": "echo",
+      "args": [
+        "Hello again from VSCode tasks!"
+      ],
+      "problemMatcher": [],
+      "presentation": {
+        "echo": false,
+        "group": "MyGroup",
+        "reveal": "always",
+        "focus": true,
+        "panel": "shared",
+        "showReuseMessage": false,
+        "clear": true
+      },
     },
     {
       "label": "VSCode: Long Running",
@@ -22,8 +47,13 @@
       ],
       "problemMatcher": [],
       "presentation": {
+        "echo": false,
+        "group": "MyGroup",
         "reveal": "always",
-        "panel": "new"
+        "focus": true,
+        "panel": "shared",
+        "showReuseMessage": false,
+        "clear": true
       }
     },
     {
@@ -44,7 +74,9 @@
       "label": "VSCode: Build",
       "type": "shell",
       "command": "echo",
-      "args": ["Building project..."],
+      "args": [
+        "Building project..."
+      ],
       "problemMatcher": [],
       "group": {
         "kind": "build",
@@ -55,7 +87,9 @@
       "label": "VSCode: Test",
       "type": "shell",
       "command": "echo",
-      "args": ["Running tests..."],
+      "args": [
+        "Running tests..."
+      ],
       "problemMatcher": [],
       "group": {
         "kind": "test",
@@ -72,25 +106,77 @@
     {
       "label": "Run Shell Script",
       "type": "shell",
-      "command": "./shell/hello.sh",
-      "problemMatcher": []
+      "command": "bash ./shell/hello.sh",
+      "problemMatcher": [],
+      "presentation": {
+        "echo": false,
+        "group": "MyGroup",
+        "reveal": "always",
+        "focus": true,
+        "panel": "shared",
+        "showReuseMessage": false,
+        "clear": true
+      },
     },
     {
       "label": "Run Python Script",
       "type": "shell",
-      "command": "./python/tasks.py",
-      "args": ["hello"],
-      "problemMatcher": []
+      "command": "python",
+      "args": [
+        "./python/tasks.py",
+        "hello"
+      ],
+      "problemMatcher": [],
+      "presentation": {
+        "echo": false,
+        "group": "MyGroup",
+        "reveal": "always",
+        "focus": true,
+        "panel": "shared",
+        "showReuseMessage": false,
+        "clear": true
+      },
     },
     {
       "label": "Run Make Hello",
       "type": "shell",
       "command": "make",
-      "args": ["hello"],
+      "args": [
+        "hello"
+      ],
       "options": {
         "cwd": "${workspaceFolder}/makefile"
       },
       "problemMatcher": []
+    },
+    {
+      "label": "TEST: Step 1",
+      "type": "shell",
+      "command": "echo",
+      "args": [
+        "Step 1"
+      ],
+      "problemMatcher": [],
+      "hide": true
+    },
+    {
+      "label": "TEST: Step 2",
+      "type": "shell",
+      "command": "bash",
+      "args": [
+        "-c",
+        "echo 'This is step 2'"
+      ],
+      "problemMatcher": [],
+      "hide": true
+    },
+    {
+      "label": "TEST: RUN ALL",
+      "dependsOn": [
+        "TEST: Step 1",
+        "TEST: Step 2"
+      ],
+      "dependsOrder": "sequence"
     }
   ]
 }

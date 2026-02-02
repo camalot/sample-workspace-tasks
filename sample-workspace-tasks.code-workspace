@@ -9,7 +9,6 @@
 		"workspaceTasks.applicationPath.ant": "tools\\ant\\bin\\ant",
 		"workspaceTasks.applicationPath.just": "tools/just/just",
 		"workspaceTasks.applicationPath.maven": "tools/maven/bin/mvn",
-		"workspaceTasks.groups.recentTasks.enabled": false,
 		"terminal.integrated.profiles.windows": {
 			"PowerShell": {
 				"path": "C:\\Program Files\\PowerShell\\7\\pwsh.exe",
@@ -19,7 +18,9 @@
 			}
 		},
 		"terminal.integrated.defaultProfile.windows": "PowerShell",
-		"workspaceTasks.groups.taskSeparator": ":",
-		"workspaceTasks.recentTasks.maxItems": 0
+		"workspaceTasks.recentTasks.maxItems": 5,
+		"terminal.integrated.windowsUseConptyDll": true,
+		"workspaceTasks.task.doubleClickAction": "run",
+		"workspaceTasks.groups.useParentFolder": true
 	}
 }

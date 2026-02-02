@@ -1,0 +1,11 @@
+{
+  "name": "root-sample-tasks",
+  "version": "1.0.0",
+  "description": "Sample tasks for testing VSCode task runner",
+  "devDependencies": {
+    "eslint": "^9.39.2",
+    "typescript-eslint": "^8.53.1",
+    "webpack": "^5.104.1",
+    "webpack-cli": "^6.0.1"
+  }
+}
