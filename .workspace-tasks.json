@@ -1,0 +1,23 @@
+{
+  "pantera": {
+    "globs": {
+      "include": ["**/shell/hello2.sh"]
+    },
+    "inputs": [
+      {
+        "id": "Name",
+        "type": "promptString",
+        "description": "What's your name?"
+      }
+    ],
+    "tasks": [
+      {
+        "label": "Great Southern Trendkill",
+        "command": "sh ./hello2.sh {{ .Name }}",
+        "group": "build",
+        "type": "shell",
+        "hide": true
+      }
+    ]
+  }
+}

@@ -1,0 +1,5 @@
+{
+  "tasks": {
+    "cool": "echo 'This is cool'"
+  }
+}
