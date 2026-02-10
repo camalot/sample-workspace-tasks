@@ -1,6 +1,6 @@
 {
   "name": "root-sample-tasks",
-  "version": "0.1.0",
+  "version": "1.1.0",
   "description": "Sample tasks for testing VSCode task runner",
   "devDependencies": {
     "git-cliff": "^2.12.0",
