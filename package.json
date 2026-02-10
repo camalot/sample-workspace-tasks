@@ -10,7 +10,7 @@
     "webpack-cli": "^6.0.1"
   },
   "scripts": {
-    "compile": "echo 'Compiling ...",
+    "compile": "echo 'Compiling ...'",
     "test": "echo 'Running Tests ...&& echo 'All tests passed!",
 
     "hello": "echo 'Hello from Node.js!'",
