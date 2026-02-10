@@ -152,16 +152,16 @@
     {
       "label": "TEST: Step 1",
       "type": "shell",
-      "command": "echo",
+      "command": "sleep",
       "args": [
-        "Step 1"
+        "5"
       ],
       "problemMatcher": [],
       "hide": true
     },
     {
       "label": "TEST: Step 2",
-      "type": "shell",
+      "type": "process",
       "command": "bash",
       "args": [
         "-c",
@@ -176,7 +176,7 @@
         "TEST: Step 1",
         "TEST: Step 2"
       ],
-      "dependsOrder": "sequence"
+      "dependsOrder": "parallel"
     }
   ]
 }

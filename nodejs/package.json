@@ -3,11 +3,36 @@
   "version": "1.0.0",
   "description": "Sample Node.js tasks for testing VSCode task runner",
   "scripts": {
+
+    "compile": "echo 'Compiling ...",
+    "test": "echo 'Running Tests ...",
+
     "hello": "echo 'Hello from Node.js!'",
     "long-running": "node -e \"console.log('Starting long task...'); setTimeout(() => { console.log('Task completed!'); process.exit(0); }, 10000)\"",
     "failing-task": "node -e \"console.log('This task will fail...'); process.exit(1)\"",
     "build": "echo 'Building project...' && sleep 2 && echo 'Build complete!'",
     "test": "echo 'Running tests...' && echo 'All tests passed!'",
     "watch": "node -e \"let i=0; setInterval(() => console.log('Watching... ' + (++i)), 1000)\""
+  },
+
+  "devDependencies": {
+    "@types/mocha": "^10.0.10",
+    "@types/node": "25.x",
+    "@types/vscode": "^1.105.1",
+    "@typescript-eslint/eslint-plugin": "^8.54.0",
+    "@typescript-eslint/parser": "^8.54.0",
+    "@vscode/test-cli": "^0.0.12",
+    "@vscode/test-electron": "^2.5.2",
+    "@vscode/vsce": "^3.7.1",
+    "eslint": "^9.39.2",
+    "git-cliff": "^2.12.0",
+    "glob": "^13.0.0",
+    "mocha": "^11.7.5",
+    "prettier": "^3.8.1",
+    "ts-loader": "^9.5.4",
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.54.0",
+    "webpack": "^5.104.1",
+    "webpack-cli": "^6.0.1"
   }
 }
