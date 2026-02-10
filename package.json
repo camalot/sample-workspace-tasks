@@ -3,17 +3,20 @@
   "version": "1.0.0",
   "description": "Sample tasks for testing VSCode task runner",
   "devDependencies": {
+    "git-cliff": "^2.12.0",
     "eslint": "^9.39.2",
     "typescript-eslint": "^8.53.1",
     "webpack": "^5.104.1",
     "webpack-cli": "^6.0.1"
   },
   "scripts": {
+    "compile": "echo 'Compiling ...",
+    "test": "echo 'Running Tests ...&& echo 'All tests passed!",
+
     "hello": "echo 'Hello from Node.js!'",
     "long-running": "node -e \"console.log('Starting long task...'); setTimeout(() => { console.log('Task completed!'); process.exit(0); }, 10000)\"",
     "failing-task": "node -e \"console.log('This task will fail...'); process.exit(1)\"",
     "build": "echo 'Building project...' && sleep 2 && echo 'Build complete!'",
-    "test": "echo 'Running tests...' && echo 'All tests passed!'",
     "watch": "node -e \"let i=0; setInterval(() => console.log('Watching... ' + (++i)), 1000)\""
   }
 }
