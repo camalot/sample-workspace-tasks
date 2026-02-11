@@ -1,18 +1,15 @@
-## [1.0.1] - 2026-02-11
+## [1.2.0] - 2026-02-11
 
-### 🐛 Bug Fixes
+### 🚀 Features
 
-- Update package version to be correct by @camalot
+- Update release actions by @camalot
 
-
-
-**Full Changelog**: https://github.com/camalot/sample-workspace-tasks/compare/vv1.0.0...vvv1.0.1
-
-## [1.0.0] - 2026-02-11
 
 ### 🐛 Bug Fixes
 
 - Fix release action by @camalot
+
+- Update package version to be correct by @camalot
 
 
 ### ⚙️ Miscellaneous Tasks
@@ -21,9 +18,11 @@
 
 - *(release)* V1.0.0 🚀 by @github-actions[bot]
 
+- *(release)* Vv1.0.1 🚀 by @github-actions[bot]
 
 
-**Full Changelog**: https://github.com/camalot/sample-workspace-tasks/compare/v1.1.5...vv1.0.0
+
+**Full Changelog**: https://github.com/camalot/sample-workspace-tasks/compare/v1.1.5...v1.2.0
 
 ## [1.1.5] - 2026-02-10
 
@@ -33,11 +32,6 @@
 
 - [**breaking**] Bumped version by @camalot
 
-
-
-**Full Changelog**: https://github.com/camalot/sample-workspace-tasks/compare/v0.1.0...v1.1.5
-
-## [0.1.0] - 2026-02-10
 
 ### 🐛 Bug Fixes
 
@@ -94,7 +88,7 @@
 
 
 ### New Contributors
-* @github-actions[bot] made their first contribution
 * @camalot made their first contribution
+* @github-actions[bot] made their first contribution
 * @Copilot made their first contribution
 
