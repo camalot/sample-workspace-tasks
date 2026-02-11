@@ -81,7 +81,8 @@
       "group": {
         "kind": "build",
         "isDefault": true
-      }
+      },
+      "hide": true
     },
     {
       "label": "VSCode: Test",
@@ -138,6 +139,16 @@
       },
     },
     {
+      "label": "wsl python hello",
+      "type": "process",
+      "command": "wsl",
+      "args": [
+        "python3",
+        "./python/tasks.py",
+        "hello"
+      ],
+    },
+    {
       "label": "Run Make Hello",
       "type": "shell",
       "command": "make",
@@ -152,9 +163,9 @@
     {
       "label": "TEST: Step 1",
       "type": "shell",
-      "command": "echo",
+      "command": "sleep",
       "args": [
-        "Step 1"
+        "5"
       ],
       "problemMatcher": [],
       "hide": true
@@ -162,10 +173,9 @@
     {
       "label": "TEST: Step 2",
       "type": "shell",
-      "command": "bash",
+      "command": "sleep",
       "args": [
-        "-c",
-        "echo 'This is step 2'"
+        "5"
       ],
       "problemMatcher": [],
       "hide": true
