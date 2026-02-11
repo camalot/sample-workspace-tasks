@@ -1,11 +1,14 @@
+## [1.0.1] - 2026-02-11
+
+### 🐛 Bug Fixes
+
+- Update package version to be correct by @camalot
+
+
+
+**Full Changelog**: https://github.com/camalot/sample-workspace-tasks/compare/vv1.0.0...vvv1.0.1
+
 ## [1.0.0] - 2026-02-11
-
-### 🚀 Features
-
-- Added cliff.toml by @camalot
-
-- [**breaking**] Bumped version by @camalot
-
 
 ### 🐛 Bug Fixes
 
@@ -16,9 +19,23 @@
 
 - Update config of cliff by @camalot
 
+- *(release)* V1.0.0 🚀 by @github-actions[bot]
 
 
-**Full Changelog**: https://github.com/camalot/sample-workspace-tasks/compare/v0.1.0...vv1.0.0
+
+**Full Changelog**: https://github.com/camalot/sample-workspace-tasks/compare/v1.1.5...vv1.0.0
+
+## [1.1.5] - 2026-02-10
+
+### 🚀 Features
+
+- Added cliff.toml by @camalot
+
+- [**breaking**] Bumped version by @camalot
+
+
+
+**Full Changelog**: https://github.com/camalot/sample-workspace-tasks/compare/v0.1.0...v1.1.5
 
 ## [0.1.0] - 2026-02-10
 
