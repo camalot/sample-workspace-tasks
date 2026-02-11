@@ -34,8 +34,6 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: 
-
       - name: Get Next Version
         id: next_version
         run: |
