@@ -186,7 +186,7 @@
         "TEST: Step 1",
         "TEST: Step 2"
       ],
-      "dependsOrder": "sequence"
+      "dependsOrder": "parallel"
     }
   ]
 }

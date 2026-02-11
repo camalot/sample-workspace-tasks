@@ -14,7 +14,7 @@ failing-task:
 	@echo "This task will intentionally fail..."
 	@exit 1
 
-build:
+nbuild:
 	@echo "Building with Make..."
 	@sleep 2
 	@echo "Build successful!"
