@@ -1,0 +1,17 @@
+desc "Clean up temporary files"
+task :clean do
+  # Use sh "command" to run shell commands
+  sh "rm -f *.tmp" do |ok, res|
+    if !ok
+      puts "Cleaning failed (exit status: #{res.exitstatus})"
+    end
+  end
+end
+
+desc "Build the project"
+task :build => [:clean] do
+  puts "Building the project..."
+  # Add your build commands here
+end
+
+task default: :build
