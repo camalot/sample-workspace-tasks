@@ -1,3 +1,13 @@
+## [1.2.1] - 2026-02-11
+
+### 🐛 Bug Fixes
+
+- Sub package name and versions by @camalot
+
+
+
+**Full Changelog**: https://github.com/camalot/sample-workspace-tasks/compare/v1.2.0...v1.2.1
+
 ## [1.2.0] - 2026-02-11
 
 ### 🚀 Features
@@ -19,6 +29,8 @@
 - *(release)* V1.0.0 🚀 by @github-actions[bot]
 
 - *(release)* Vv1.0.1 🚀 by @github-actions[bot]
+
+- *(release)* 1.2.0 🚀 by @github-actions[bot]
 
 
 
