@@ -1,0 +1,18 @@
+name: nodejs-sample-tasks
+version: "1.0.0"
+description: "Sample Node.js tasks for testing VSCode task runner"
+
+scripts:
+  compile: |-
+    echo 'Compiling ...
+  test: |-
+    echo 'Running Tests ...&& echo 'All tests passed!"
+  hello: "echo 'Hello from Node.js!'"
+  long-running: |-
+    node -e "console.log('Starting long task...'); setTimeout(() => { console.log('Task completed!'); process.exit(0); }, 10000)"
+  failing-task: |-
+    node -e "console.log('This task will fail...'); process.exit(1)"
+  build: |-
+    echo 'Building project...' && sleep 2 && echo 'Build complete!'
+  watch: |-
+    node -e "let i=0; setInterval(() => console.log('Watching... ' + (++i)), 1000)"
