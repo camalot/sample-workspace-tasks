@@ -3,6 +3,6 @@
   "version": "1.0.0",
   "description": "Sample Gulp tasks for testing VSCode task runner",
   "devDependencies": {
-    "gulp": "^4.0.2"
+    "gulp": "^5.0.1"
   }
 }
