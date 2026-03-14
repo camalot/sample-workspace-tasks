@@ -39,7 +39,7 @@
     },
     {
       "label": "VSCode: Long Running",
-      "type": "shell",
+      "type": "process",
       "command": "bash",
       "args": [
         "-c",
@@ -58,7 +58,7 @@
     },
     {
       "label": "VSCode: Failing Task",
-      "type": "shell",
+      "type": "process",
       "command": "bash",
       "args": [
         "-c",

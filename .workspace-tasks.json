@@ -1,5 +1,6 @@
 {
   "pantera": {
+    "iconUri": "$(task)",
     "globs": {
       "include": ["**/shell/hello2.sh"]
     },

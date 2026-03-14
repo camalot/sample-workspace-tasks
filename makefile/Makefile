@@ -14,6 +14,9 @@ failing-task:
 	@echo "This task will intentionally fail..."
 	@exit 1
 
+test2:
+	@echo "test all the things"
+
 nbuild:
 	@echo "Building with Make..."
 	@sleep 2
