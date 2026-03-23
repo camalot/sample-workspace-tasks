@@ -58,75 +58,6 @@ function fix_ssh_permissions() {
   echo ""
 }
 
-# shellcheck disable=SC2329
-function install_act() {
-  # --- act CLI ---------------------------------------------------------------
-  # Download a pre-built binary if it doesn't already exist in the repository.
-  # The extension's settings.json points to "tools/act/act", so we need to
-  # populate that path.
-  ACT_VERSION="${ACT_VERSION:-0.2.84}" # bump as needed; use a known working release
-  ACT_PATH="tools/act/act"
-
-  if [ ! -f "$ACT_PATH" ]; then
-    echo -e "${COLOR_BLUE}=================================================================${COLOR_RESET}"
-    echo -e "${COLOR_BLUE}Installing nektos/act v${ACT_VERSION} CLI for running GitHub Actions locally...${COLOR_RESET}"
-    mkdir -p "$(dirname "$ACT_PATH")"
-    curl -fsSL "https://github.com/nektos/act/releases/download/v${ACT_VERSION}/act_Linux_x86_64.tar.gz" | tar -xz -C "$(dirname "$ACT_PATH")"
-    chmod +x "$ACT_PATH"
-    echo -e "${COLOR_GREEN}nektos/act v${ACT_VERSION} CLI installed successfully.${COLOR_RESET}"
-    echo -e "${COLOR_BLUE}=================================================================${COLOR_RESET}"
-    echo ""
-  fi
-}
-
-function install_sample_tasks() {
-  # clone https://github.com/camalot/sample-workspace-tasks.git to use when running project for testing.
-  SAMPLE_WORKSPACE_TASKS_REPO="https://github.com/camalot/sample-workspace-tasks.git"
-  SAMPLE_WORKSPACE_TASKS_DIR="sample/sample-workspace-tasks"
-
-  echo -e "${COLOR_BLUE}=================================================================${COLOR_RESET}"
-  echo -e "${COLOR_BLUE}Installing sample workspace tasks...${COLOR_RESET}"
-
-  mkdir -p "$(dirname "$SAMPLE_WORKSPACE_TASKS_DIR")"
-  local current_dir
-  current_dir=$(pwd)
-  if [ ! -d "$SAMPLE_WORKSPACE_TASKS_DIR" ]; then
-    echo -e "${COLOR_BLUE}Cloning sample workspace tasks...${COLOR_RESET}"
-    # Bypass local SSH config to avoid "Bad owner or permissions on /home/vscode/.ssh/config" errors
-    # on WSL setups where ~/.ssh is symlinked to a Windows drive mount.
-    env GIT_SSH_COMMAND="ssh -F /dev/null" git clone "$SAMPLE_WORKSPACE_TASKS_REPO" "$SAMPLE_WORKSPACE_TASKS_DIR"
-    echo -e "${COLOR_GREEN}Sample workspace tasks installed successfully at $SAMPLE_WORKSPACE_TASKS_DIR.${COLOR_RESET}"
-  else
-    echo -e "${COLOR_GREEN}Sample workspace tasks already present at $SAMPLE_WORKSPACE_TASKS_DIR${COLOR_RESET}"
-    cd $SAMPLE_WORKSPACE_TASKS_DIR || true
-    git pull origin main || true
-    cd "$current_dir" || true
-  fi
-  echo -e "${COLOR_GREEN}=================================================================${COLOR_RESET}"
-  echo ""
-}
-
-function jekyll_bundle_prep() {
-  local current_dir
-  current_dir=$(pwd)
-
-  docs_dir="$current_dir/docs"
-  if [ -d "$docs_dir" ]; then
-    echo -e "${COLOR_BLUE}=================================================================${COLOR_RESET}"
-    echo -e "${COLOR_BLUE}Installing Jekyll dependencies for documentation...${COLOR_RESET}"
-    cd "$docs_dir"
-    bundle config set --local path vendor/bundle
-    bundle install
-    echo -e "${COLOR_GREEN}Jekyll dependencies installed successfully.${COLOR_RESET}"
-    echo -e "${COLOR_BLUE}=================================================================${COLOR_RESET}"
-    echo ""
-  else
-    echo -e "${COLOR_BLUE}No docs directory found at $docs_dir. Skipping Jekyll bundle prep.${COLOR_RESET}"
-  fi
-  cd "$current_dir"
-
-}
-
 function npm_install() {
   local current_dir
   current_dir=$(pwd)
@@ -217,10 +148,8 @@ echo ""
 fix_ssh_permissions
 npm_install
 # install_act
-jekyll_bundle_prep
 install_antigen_bundles
 install_ohmyposh
-install_sample_tasks
 # update_packages
 
 echo ""
