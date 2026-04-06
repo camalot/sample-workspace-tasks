@@ -1,3 +1,4 @@
 apps/appA/**
 !apps/appA/script1.sh
 !apps/appA/package.json@build
+**/vendor/bundle/**

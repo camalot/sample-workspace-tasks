@@ -1,5 +1,6 @@
 tools/**/
 vendor/
+cmake/build/
 
 *.sln
 
