@@ -43,7 +43,7 @@
       "command": "bash",
       "args": [
         "-c",
-        "echo 'Starting long running VSCode task...'; for i in {1..10}; do echo 'Progress: $i/10'; sleep 1; done; echo 'Long running task completed!'"
+        "echo 'Starting long running VSCode task...'; for i in {1..10}; do echo \"Progress: $i/10\"; sleep 1; done; echo 'Long running task completed!'"
       ],
       "problemMatcher": [],
       "presentation": {
@@ -187,6 +187,30 @@
         "TEST: Step 2"
       ],
       "dependsOrder": "parallel"
+    },
+     {
+      "label": "TEST: RUN ALL SEQUENTIAL",
+      "dependsOn": [
+        "TEST: Step 1",
+        "TEST: Step 2"
+      ],
+      "dependsOrder": "sequence"
+    },
+    {
+      "label": "TEST: STUCK",
+      "type": "shell",
+      "command": "bash ./shell/stuck.sh",
+    },
+    {
+      "label": "TEST: COMPOUND CANCEL SEQUENTIAL",
+      "dependsOn": [
+        "TEST: VSCode: Long Running",
+        "TEST: STUCK",
+        "TEST: Step 1",
+        "TEST: Step 2",
+      ],
+      "dependsOrder": "sequence"
     }
+
   ]
 }
