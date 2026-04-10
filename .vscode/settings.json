@@ -1,7 +1,4 @@
 {
-  "workspaceTasks.applicationPath.act": "tools/act/act",
-  "workspaceTasks.applicationPath.ansicon": "tools\\ansicon\\ansicon.exe",
-  "workspaceTasks.applicationPath.ant": "tools\\ant\\bin\\ant",
   "workspaceTasks.applicationPath.just": "tools/just/just",
   "workspaceTasks.act.envFile": "",
   "workspaceTasks.applicationPath.maven": "tools/maven/bin/mvn",
