@@ -204,7 +204,7 @@
     {
       "label": "TEST: COMPOUND CANCEL SEQUENTIAL",
       "dependsOn": [
-        "TEST: VSCode: Long Running",
+        "VSCode: Long Running",
         "TEST: STUCK",
         "TEST: Step 1",
         "TEST: Step 2",
