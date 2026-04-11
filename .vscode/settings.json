@@ -15,5 +15,7 @@
       ]
     },
   },
-  "terminal.integrated.defaultProfile.windows": "PowerShell"
+  "terminal.integrated.defaultProfile.windows": "PowerShell",
+  "workspaceTasks.groups.compoundTasks.enabled": true,
+  "workspaceTasks.debug": true
 }
