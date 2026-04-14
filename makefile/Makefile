@@ -25,6 +25,10 @@ nbuild:
 test:
 	@echo "Running tests with Make..."
 	@echo "Tests passed!"
+	@echo "TEST_TOKEN: $$TEST_TOKEN"
+	@echo "MY_TEST_TOKEN: $$MY_TEST_TOKEN"
+	@echo "TEST_API_KEY: $$TEST_API_KEY"
+	@echo "NO_TEST_TOKEN: $$NO_TEST_TOKEN"
 
 clean:
 	@echo "Cleaning up..."

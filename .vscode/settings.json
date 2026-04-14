@@ -14,5 +14,33 @@
   },
   "terminal.integrated.defaultProfile.windows": "PowerShell",
   "workspaceTasks.groups.compoundTasks.enabled": true,
-  "workspaceTasks.debug": true
+  "workspaceTasks.debug": true,
+  "workspaceTasks.envVars.env": {
+    "TEST_TOKEN": "ABCD"
+  },
+  "workspaceTasks.envVars.secretPatterns": [
+    "*_TOKEN",
+    "*_KEY",
+    "*_SECRET",
+    "PASSWORD",
+    "PASSWD",
+    "CREDENTIALS",
+    "API_KEY",
+    "*_API_KEY"
+  ],
+  "workspaceTasks.envVars.taskEnv": [
+    {
+      "match": {
+        "taskType": "makefile",
+        "taskName": "test"
+      },
+      "secrets": {
+        "MY_TEST_TOKEN": "test-api-key",
+        "NO_TEST_TOKEN": "this-doesnt-exist"
+      },
+      "secretFiles": [
+        ".secrets"
+      ]
+    }
+  ]
 }
