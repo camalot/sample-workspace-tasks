@@ -52,5 +52,6 @@
   "workspaceTasks.shellEnabledTaskTypes": {
       "extensionless": true
   },
-  "workspaceTasks.envVars.warnIfGitTracked": true
+  "workspaceTasks.envVars.warnIfGitTracked": true,
+  "workspaceTasks.recentTasks.maxItems": 5
 }
