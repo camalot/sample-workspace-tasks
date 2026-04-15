@@ -51,5 +51,6 @@
   "workspaceTasks.secrets.showEmptyGroup": true,
   "workspaceTasks.shellEnabledTaskTypes": {
       "extensionless": true
-  }
+  },
+  "workspaceTasks.envVars.warnIfGitTracked": true
 }
