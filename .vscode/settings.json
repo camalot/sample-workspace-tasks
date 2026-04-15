@@ -42,5 +42,14 @@
         ".secrets"
       ]
     }
-  ]
+  ],
+  "workspaceTasks.envVars.envFiles": {
+    "include": [".env-warn"]
+  },
+  "workspaceTasks.tasks.sortingEnabled": false,
+  "workspaceTasks.groups.useParentFolder": true,
+  "workspaceTasks.secrets.showEmptyGroup": true,
+  "workspaceTasks.shellEnabledTaskTypes": {
+      "extensionless": true
+  }
 }
