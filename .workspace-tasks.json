@@ -17,7 +17,8 @@
         "command": "sh ./hello2.sh {{ .Name }}",
         "group": "build",
         "type": "shell",
-        "hide": true
+        "hide": true,
+        "confirm": false
       }
     ]
   }

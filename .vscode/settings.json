@@ -53,5 +53,8 @@
       "extensionless": true
   },
   "workspaceTasks.envVars.warnIfGitTracked": true,
-  "workspaceTasks.recentTasks.maxItems": 5
+  "workspaceTasks.recentTasks.maxItems": 5,
+  "workspaceTasks.task.confirmPatterns": [
+    "env-.*"
+  ]
 }
