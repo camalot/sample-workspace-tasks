@@ -18,16 +18,6 @@
   "workspaceTasks.envVars.env": {
     "TEST_TOKEN": "ABCD"
   },
-  "workspaceTasks.envVars.secretPatterns": [
-    "*_TOKEN",
-    "*_KEY",
-    "*_SECRET",
-    "PASSWORD",
-    "PASSWD",
-    "CREDENTIALS",
-    "API_KEY",
-    "*_API_KEY"
-  ],
   "workspaceTasks.envVars.taskEnv": [
     {
       "match": {
@@ -50,7 +40,7 @@
   "workspaceTasks.groups.useParentFolder": true,
   "workspaceTasks.secrets.showEmptyGroup": true,
   "workspaceTasks.shellEnabledTaskTypes": {
-      "extensionless": true
+    "extensionless": true
   },
   "workspaceTasks.envVars.warnIfGitTracked": true,
   "workspaceTasks.recentTasks.maxItems": 5,
