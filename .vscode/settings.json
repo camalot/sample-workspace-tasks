@@ -46,5 +46,9 @@
   "workspaceTasks.recentTasks.maxItems": 5,
   "workspaceTasks.task.confirmPatterns": [
     "env-.*"
-  ]
+  ],
+  "workspaceTasks.enabledTaskTypes": {
+    "ruby": false,
+    "gitlab-ci": true
+  }
 }

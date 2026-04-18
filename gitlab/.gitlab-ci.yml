@@ -1,0 +1,67 @@
+---
+# @Description Install npm packages
+npm-install:
+  stage: build
+  image: node:16.10.0-alpine3.14
+  needs: []
+  cache:
+    - { key: npm-cache, paths: [.npm] }
+    - { key: { files: [package-lock.json] }, paths: [node_modules] }
+  artifacts:
+    paths: [node_modules/]
+  script:
+    - echo "Installing npm packages..." || true
+
+# @Description Find outdated packages in node_modules
+npm-outdated:
+  stage: test
+  image: node:16.10.0-alpine3.14
+  allow_failure: true
+  needs: [npm-install]
+  script:
+    - echo "Checking for outdated packages..." || true
+
+# @Description Up docker-compose services
+docker-compose-up:
+  stage: deploy
+  needs: [npm-install]
+  environment:
+    url: http://localhost:8891
+    name: local
+  script:
+    - echo "Starting services..." || true
+
+# @Description Down docker-compose services
+docker-compose-down:
+  stage: .post
+  rules:
+    # This job will only run locally, and only when manually started
+    - { if: $GITLAB_CI == 'false', when: 'manual' }
+  environment:
+    name: local
+  script:
+    - echo "Stopping services..." || true
+
+# @Description Clean up resources regardless of pipeline result
+always-cleanup:
+  stage: .post
+  when: always
+  allow_failure: true
+  script:
+    - echo "cleanup after" || true
+
+# @Description Notify team when pipeline fails
+notify-failure:
+  stage: .post
+  when: on_failure
+  allow_failure: true
+  script:
+    - echo "Pipeline failed — notify team here"
+
+# This job is intentionally disabled and will not appear in the task tree
+skip-me:
+  stage: build
+  rules:
+    - when: never
+  script:
+    - echo "This job should never run"
