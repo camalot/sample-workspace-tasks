@@ -1,0 +1,36 @@
+version: 2.1
+
+jobs:
+  lint:
+    docker:
+      - image: cimg/node:20.11
+    steps:
+      - checkout
+      - run: npm run lint
+
+  test:
+    docker:
+      - image: cimg/node:20.11
+    steps:
+      - checkout
+      - run: npm test
+
+  package:
+    docker:
+      - image: cimg/node:20.11
+    steps:
+      - checkout
+      - run: npm run build
+
+  nightly-cleanup:
+    docker:
+      - image: cimg/base:stable
+    steps:
+      - run: echo "cleanup"
+
+workflows:
+  build-and-test:
+    jobs:
+      - lint
+      - test
+      - package

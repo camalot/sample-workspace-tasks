@@ -129,6 +129,10 @@ RUN curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y \
 && ACT_VERSION=$(curl -s "https://api.github.com/repos/nektos/act/releases/latest" | jq -r ".tag_name") \
 && curl -fsSL "https://github.com/nektos/act/releases/download/${ACT_VERSION}/act_Linux_x86_64.tar.gz" | tar -xz -C "/home/${USERNAME}/bin"
 
+# install task (https://taskfile.dev/), a modern alternative to Make written in Go
+RUN curl -1sLf 'https://dl.cloudsmith.io/public/task/task/setup.deb.sh' | sudo -E bash - && \
+  sudo apt-get install -y task
+
 COPY files/home/vscode/ /home/${USERNAME}/
 
 RUN git clone --depth=1 'https://github.com/romkatv/powerlevel10k.git' "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k" \

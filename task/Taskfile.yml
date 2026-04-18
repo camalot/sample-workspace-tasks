@@ -1,0 +1,47 @@
+# yaml-language-server: $schema=https://taskfile.dev/schema.json
+---
+# Note: Workspace Tasks can also discover a global $HOME/Taskfile.yml when
+# workspaceTasks.taskfile.discoverGlobalTaskfile is enabled.
+
+version: '3'
+
+vars:
+  APP_NAME: my-app
+
+tasks:
+  default:
+    desc: Print a greeting message
+    cmds:
+      - echo "Hello from Task!!!"
+      - echo "This is {{.APP_NAME}}."
+    silent: true
+
+  build:
+    desc: Build the application
+    aliases: [b, bld]
+    cmds:
+      - echo "Building {{.APP_NAME}}..."
+
+  test:
+    desc: Run the test suite
+    cmds:
+      - echo "Running tests for {{.APP_NAME}}..."
+
+  lint:
+    desc: Run the linter
+    cmds:
+      - echo "Linting {{.APP_NAME}}..."
+
+  clean:
+    desc: Clean build artifacts
+    cmds:
+      - echo "Cleaning {{.APP_NAME}} artifacts..."
+
+  deploy:
+    desc: Deploy the application
+    cmds:
+      - echo "Deploying {{.APP_NAME}}..."
+
+  ci:
+    desc: Run the full CI pipeline
+    deps: [build, test, lint]
