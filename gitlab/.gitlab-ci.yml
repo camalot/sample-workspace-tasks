@@ -10,7 +10,7 @@ npm-install:
   artifacts:
     paths: [node_modules/]
   script:
-    - echo "Installing npm packages..." || true
+    - npm install --no-audit --no-progress --cache .npm
 
 # @Description Find outdated packages in node_modules
 npm-outdated:
@@ -19,7 +19,7 @@ npm-outdated:
   allow_failure: true
   needs: [npm-install]
   script:
-    - echo "Checking for outdated packages..." || true
+    - npx -s ncu -e2 --deprecated --packageFile package.json
 
 # @Description Up docker-compose services
 docker-compose-up:
@@ -29,7 +29,7 @@ docker-compose-up:
     url: http://localhost:8891
     name: local
   script:
-    - echo "Starting services..." || true
+    - docker compose up -d
 
 # @Description Down docker-compose services
 docker-compose-down:
@@ -40,7 +40,7 @@ docker-compose-down:
   environment:
     name: local
   script:
-    - echo "Stopping services..." || true
+    - docker compose down
 
 # @Description Clean up resources regardless of pipeline result
 always-cleanup:
@@ -48,7 +48,7 @@ always-cleanup:
   when: always
   allow_failure: true
   script:
-    - echo "cleanup after" || true
+    - docker compose down --volumes --remove-orphans || true
 
 # @Description Notify team when pipeline fails
 notify-failure:
