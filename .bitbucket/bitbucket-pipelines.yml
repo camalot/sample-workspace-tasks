@@ -1,0 +1,40 @@
+---
+# Use a specific Docker image from Docker Hub
+image: node:18
+
+pipelines:
+  # The 'default' section runs on every push to any branch
+  default:
+    - step:
+        name: Build and Test
+        # Caches dependencies to speed up future builds
+        caches:
+          - node
+        script:
+          - npm install
+          - npm test
+          - npm run build
+
+  # Specific configuration for the 'master' or 'main' branch
+  branches:
+    master:
+      - step:
+          name: Security Scan
+          script:
+            # Use "Pipes" for third-party integrations like security scans
+            - pipe: atlassian/git-secrets-scan:0.4.3
+      - step:
+          name: Deploy to Production
+          # 'deployment' tracks history in the Bitbucket UI
+          deployment: production
+          script:
+            - echo "Deploying to production..."
+            # Replace with your actual deployment command (e.g., AWS S3, Heroku, etc.)
+
+  # Pipelines triggered manually or on a schedule from the UI
+  custom:
+    manual-deployment:
+      - step:
+          name: Custom Manual Step
+          script:
+            - echo "This only runs when you click 'Run pipeline' in Bitbucket."

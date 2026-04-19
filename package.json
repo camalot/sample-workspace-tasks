@@ -12,6 +12,7 @@
   "scripts": {
     "compile": "echo 'Compiling ...'",
     "test": "echo 'Running Tests ...&& echo 'All tests passed!",
+    "test:smoke": "echo 'Running smoke tests ...&& echo 'All smoke tests passed!",
     "hello": "echo 'Hello from Node.js!'",
     "long-running": "node -e \"console.log('Starting long task...'); setTimeout(() => { console.log('Task completed!'); process.exit(0); }, 10000)\"",
     "failing-task": "node -e \"console.log('This task will fail...'); process.exit(1)\"",
