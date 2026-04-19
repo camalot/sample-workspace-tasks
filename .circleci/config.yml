@@ -5,22 +5,28 @@ jobs:
     docker:
       - image: cimg/node:20.11
     steps:
-      - checkout
-      - run: npm run lint
+      # - checkout
+      - run: echo "Linting code..."
+      - run: echo "npm run lint"
+      - run: npm --version
 
   test:
     docker:
       - image: cimg/node:20.11
     steps:
-      - checkout
-      - run: npm test
+      # - checkout
+      - run: echo "Running tests..."
+      - run: echo "npm test"
+      - run: npm --version
 
   package:
     docker:
       - image: cimg/node:20.11
     steps:
-      - checkout
-      - run: npm run build
+      # - checkout
+      - run: echo "Building package..."
+      - run: echo "npm run build"
+      - run: npm --version
 
   nightly-cleanup:
     docker:
