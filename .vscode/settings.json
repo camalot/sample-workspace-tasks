@@ -1,5 +1,4 @@
 {
-  "workspaceTasks.applicationPath.just": "tools/just/just",
   "workspaceTasks.act.envFile": "",
   "workspaceTasks.applicationPath.maven": "tools/maven/bin/mvn",
   "workspaceTasks.groups.recentTasks.enabled": false,
@@ -36,7 +35,6 @@
   "workspaceTasks.envVars.envFiles": {
     "include": [".env-warn"]
   },
-  "workspaceTasks.tasks.sortingEnabled": false,
   "workspaceTasks.groups.useParentFolder": false,
   "workspaceTasks.secrets.showEmptyGroup": true,
   "workspaceTasks.shellEnabledTaskTypes": {
