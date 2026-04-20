@@ -4,3 +4,4 @@
 echo "Hello from shell script!"
 echo "Current directory: $(pwd)"
 echo "Current user: $(whoami)"
+echo "You passed the following arguments: $@"

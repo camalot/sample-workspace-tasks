@@ -37,7 +37,7 @@
     "include": [".env-warn"]
   },
   "workspaceTasks.tasks.sortingEnabled": false,
-  "workspaceTasks.groups.useParentFolder": true,
+  "workspaceTasks.groups.useParentFolder": false,
   "workspaceTasks.secrets.showEmptyGroup": true,
   "workspaceTasks.shellEnabledTaskTypes": {
     "extensionless": true

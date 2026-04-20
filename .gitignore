@@ -1,6 +1,7 @@
 tools/**/
 vendor/
 cmake/build/
+.gitlab-ci-local/
 
 *.sln
 
