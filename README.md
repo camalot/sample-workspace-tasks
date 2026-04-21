@@ -17,6 +17,7 @@ sample-workspace-tasks/
 ├── grunt/               # Grunt tasks
 ├── gulp/                # Gulp tasks
 ├── justfile/            # Just task runner
+├── mise/                # mise task config variants
 ├── .vscode/             # VSCode tasks.json
 └── .github/workflows/   # GitHub Actions workflows
 ```
@@ -237,7 +238,29 @@ cd justfile
 just hello
 ```
 
-### 12. VSCode Tasks
+### 12. mise
+
+**Location:** `mise/`
+
+Examples of supported mise config file locations and naming variants. Every file contains `echo`-based tasks only.
+
+**Included file patterns:**
+- `mise.toml`
+- `mise.local.toml`
+- `.mise.toml`
+- `mise/config.toml`
+- `.mise/config.toml`
+- `.config/mise.toml`
+- `.config/mise/config.toml`
+- `.config/mise/conf.d/dev.toml`
+
+**Usage:**
+```bash
+cd mise
+mise run rootTask
+```
+
+### 13. VSCode Tasks
 
 **Location:** `.vscode/tasks.json`
 

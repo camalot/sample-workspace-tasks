@@ -35,10 +35,7 @@
   "workspaceTasks.envVars.envFiles": {
     "include": [".env-warn"]
   },
-<<<<<<< Updated upstream
   "workspaceTasks.groups.useParentFolder": false,
-=======
->>>>>>> Stashed changes
   "workspaceTasks.secrets.showEmptyGroup": true,
   "workspaceTasks.shellEnabledTaskTypes": {
     "extensionless": true

@@ -1,0 +1,2 @@
+[tasks.rootTask]
+run = "echo rootTask"

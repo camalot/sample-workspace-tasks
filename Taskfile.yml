@@ -22,6 +22,6 @@ tasks:
 
   # Full object format
   deploy:
-    desc: Deploy the application
+    desc: Deploy the application...
     cmds:
-      - ./scripts/deploy.sh
+      - echo "Deploying the application..."
