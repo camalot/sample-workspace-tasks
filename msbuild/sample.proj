@@ -1,0 +1,27 @@
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build">
+
+  <PropertyGroup>
+    <ProjectName>SampleMsBuildProject</ProjectName>
+    <Configuration>Debug</Configuration>
+  </PropertyGroup>
+
+  <Target Name="Build" Description="Build the project">
+    <Message Text="Building $(ProjectName)..." Importance="high" />
+    <Exec Command="echo Hello from MSBuild Build!" />
+  </Target>
+
+  <Target Name="Test" Description="Run tests">
+    <Message Text="Running tests for $(ProjectName)..." Importance="high" />
+    <Exec Command="echo Running tests..." />
+  </Target>
+
+  <Target Name="Clean" Description="Clean build artifacts">
+    <Message Text="Cleaning $(ProjectName)..." Importance="high" />
+    <Exec Command="echo Cleaning build artifacts..." />
+  </Target>
+
+  <Target Name="Rebuild" DependsOnTargets="Clean;Build" Description="Clean and rebuild the project">
+    <Message Text="Rebuild complete." Importance="high" />
+  </Target>
+
+</Project>

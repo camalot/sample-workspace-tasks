@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="sample-ant-project" default="hello" basedir=".">
+
+  <description>Sample Ant build file for Workspace Tasks extension</description>
+
+  <target name="hello" description="Print a greeting">
+    <echo message="Hello from Ant!" />
+  </target>
+
+  <target name="build" description="Build the project">
+    <echo message="Building project..." />
+  </target>
+
+  <target name="test" description="Run tests">
+    <echo message="Running tests..." />
+  </target>
+
+  <target name="clean" description="Clean build artifacts">
+    <echo message="Cleaning build artifacts..." />
+  </target>
+
+</project>
