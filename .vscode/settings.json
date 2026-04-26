@@ -47,6 +47,7 @@
   ],
   "workspaceTasks.enabledTaskTypes": {
     "ruby": false,
-    "gitlab-ci": true
+    "gitlab-ci": true,
+    "pnpm": true
   }
 }

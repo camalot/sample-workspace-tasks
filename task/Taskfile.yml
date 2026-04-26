@@ -12,7 +12,7 @@ tasks:
   default:
     desc: Print a greeting message
     cmds:
-      - echo "Hello from Task!!!"
+      - echo "Hello from Task (primary)!!!"
       - echo "This is {{.APP_NAME}}."
     silent: true
 
