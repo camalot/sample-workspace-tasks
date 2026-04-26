@@ -46,6 +46,13 @@ function test(cb) {
   cb();
 }
 
+export function runCommand(command, cb) {
+  console.log(`Running command: ${command}`);
+  cb();
+}
+
+
+
 // Export tasks
 exports.hello = hello;
 exports.longRunning = longRunning;

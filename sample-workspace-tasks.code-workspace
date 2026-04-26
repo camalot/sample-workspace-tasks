@@ -23,12 +23,14 @@
 		"workspaceTasks.task.doubleClickAction": "run",
 		"workspaceTasks.groups.useParentFolder": true
 	},
-	"tasks": [
-    {
-      "label": "code-workspace task",
-      "type": "shell",
-      "command": "echo Hello from the workspace file"
-    }
-  ]
-	
+	"tasks": {
+		"version": "2.0.0",
+		"tasks": [
+			{
+				"label": "code-workspace task",
+				"type": "shell",
+				"command": "echo Hello from the workspace file"
+			}
+		]
+	}	
 }

@@ -46,8 +46,11 @@
     "env-.*"
   ],
   "workspaceTasks.enabledTaskTypes": {
-    "ruby": false,
+    "ruby": true,
     "gitlab-ci": true,
-    "pnpm": true
+    "pnpm": true,
+    "yarn": true,
+    "circleci": true,
+    "bun": true
   }
 }
