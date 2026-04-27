@@ -9,12 +9,23 @@
         "id": "Name",
         "type": "promptString",
         "description": "What's your name?"
+      },
+      {
+        "id": "Age",
+        "type": "promptString",
+        "description": "How old are you?"
+      },
+      {
+        "id": "FavoriteColor",
+        "type": "pickString",
+        "description": "What's your favorite color?",
+        "options": ["Red", "Green", "Blue", "Yellow"]
       }
     ],
     "tasks": [
       {
         "label": "Great Southern Trendkill",
-        "command": "sh ./hello2.sh {{ .Name }}",
+        "command": "sh ./hello2.sh {{ .Name }} {{ .Age }} {{ .FavoriteColor }}",
         "group": "build",
         "type": "shell",
         "hide": true,
