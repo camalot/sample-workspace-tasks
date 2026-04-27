@@ -48,10 +48,7 @@
   "workspaceTasks.enabledTaskTypes": {
     "ruby": true,
     "gitlab-ci": true,
-    "pnpm": true,
-    "yarn": true,
-    "circleci": true,
-    "bun": true
+    "circleci": true
   },
   "workspaceTasks.taskDiscovery.fetchDepth": 4,
   "workspaceTasks.task.guidedArgInput": true
