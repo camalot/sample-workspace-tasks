@@ -1,2 +1,2 @@
-# shell=bash
+# shellcheck shell=bash
 echo "hello from bash - no shebang"

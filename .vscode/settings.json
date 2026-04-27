@@ -52,5 +52,7 @@
     "yarn": true,
     "circleci": true,
     "bun": true
-  }
+  },
+  "workspaceTasks.taskDiscovery.fetchDepth": 4,
+  "workspaceTasks.task.guidedArgInput": true
 }

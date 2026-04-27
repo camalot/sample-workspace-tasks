@@ -2,7 +2,7 @@
   "pantera": {
     "iconUri": "$(task)",
     "globs": {
-      "include": ["**/shell/hello2.sh"]
+      "include": ["**/shell/bash/hello2.sh"]
     },
     "inputs": [
       {
@@ -25,7 +25,7 @@
     "tasks": [
       {
         "label": "Great Southern Trendkill",
-        "command": "sh ./hello2.sh {{ .Name }} {{ .Age }} {{ .FavoriteColor }}",
+        "command": "sh ./bash/hello2.sh {{ .Name }} {{ .Age }} {{ .FavoriteColor }}",
         "group": "build",
         "type": "shell",
         "hide": true,
