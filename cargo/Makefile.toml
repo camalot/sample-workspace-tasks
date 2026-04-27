@@ -45,6 +45,11 @@ description = "Run benchmarks"
 command = "cargo"
 args = ["bench"]
 
+[tasks.bench2]
+description = "Run benchmarks"
+command = "cargo"
+args = ["bench"]
+
 [tasks.doc]
 description = "Generate documentation"
 command = "cargo"
