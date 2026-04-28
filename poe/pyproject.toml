@@ -1,0 +1,68 @@
+[project]
+name = "sample-poe-project"
+version = "0.1.0"
+description = "A sample Poe project for testing Workspace Tasks extension"
+authors = [
+    { name = "Your Name", email = "you@example.com" }
+]
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.8"
+
+# Poetry/PEP 621 script definitions.
+# These are not Poe tasks and are discovered by the Poetry provider,
+# not by the Poe task provider.
+[project.scripts]
+run-tests = "sample_poe_project.scripts:run_tests"
+serve-http = "sample_poe_project.scripts:serve_http"
+print-version = "sample_poe_project.scripts:print_version"
+
+# Poe task definitions.
+# Poe discovers only [tool.poe.tasks] entries.
+[tool.poe.tasks]
+# Simple command task (cmd)
+test = "pytest"
+
+# Sequence task that runs multiple tasks in order
+ci = ["test", "lint", "format"]
+
+# Shell task using an external shell interpreter
+serve = { shell = "python -m http.server 8000" }
+
+# Script task can be defined inline with the .script shorthand
+version.script = "sample_poe_project.cli:get_version"
+
+# Parallel task defined using dotted key syntax and options on the same task
+clean.parallel = ["lint", "test"]
+clean.ignore_fail = "return_non_zero"
+clean.prefix = "[clean] "
+clean.prefix_max = 12
+
+# Task with custom help text and a command task
+lint = { help = "Run lint checks", cmd = "ruff check ." }
+format = { help = "Format code", cmd = "ruff format ." }
+
+# Script task using a subtable-style task declaration
+[tool.poe.tasks.create-secret]
+script = "django.core.management.utils:get_random_secret_key()"
+print_result = true
+help = "Generate a secret key"
+
+# Script task with custom PYTHONPATH
+[tool.poe.tasks.fetch-assets]
+script = "my_script:fetch_assets"
+env.PYTHONPATH = "scripts"
+help = "Fetch project assets"
+
+# Named parallel task using subtable syntax
+[tool.poe.tasks.check]
+parallel = [
+  "lint",
+  "test",
+  { script = "sample_poe_project.scripts:run_mypy" }
+]
+default_item_type = "script"
+prefix = "{index}:{name}"
+prefix_max = 10
+prefix_template = "[{prefix}] "
+help = "Run checks in parallel"
