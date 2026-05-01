@@ -21,6 +21,13 @@ tasks:
     aliases: [b, bld]
     cmds:
       - echo "Building {{.APP_NAME}}..."
+  
+  build:*:
+    vars:
+      APP_NAME: '{{index .MATCH 0}}'
+    desc: Build a specific application
+    cmds:
+      - echo "Building {{.APP_NAME}}..."
 
   test:
     desc: Run the test suite
@@ -45,3 +52,4 @@ tasks:
   ci:
     desc: Run the full CI pipeline
     deps: [build, test, lint]
+

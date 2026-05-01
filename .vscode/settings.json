@@ -35,7 +35,7 @@
   "workspaceTasks.envVars.envFiles": {
     "include": [".env-warn"]
   },
-  "workspaceTasks.groups.useParentFolder": false,
+  "workspaceTasks.groups.useParentFolder": true,
   "workspaceTasks.secrets.showEmptyGroup": true,
   "workspaceTasks.shellEnabledTaskTypes": {
     "extensionless": true
@@ -51,5 +51,7 @@
     "circleci": true
   },
   "workspaceTasks.taskDiscovery.fetchDepth": 4,
-  "workspaceTasks.task.guidedArgInput": true
+  "workspaceTasks.task.guidedArgInput": true,
+  "workspaceTasks.groups.taskSeparatorIsRegex": true,
+  "workspaceTasks.groups.taskSeparator": ":|/|-|\\s"
 }
