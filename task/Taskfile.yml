@@ -16,12 +16,28 @@ tasks:
       - echo "This is {{.APP_NAME}}."
     silent: true
 
+  _internal:clean:
+    desc: Internal task to clean build artifacts
+    cmds:
+      - echo "Cleaning {{.APP_NAME}} artifacts..."
+    internal: true
+
+  prompt:
+    requires:
+      vars:
+        - name: APP_NAME
+        - name: ENVIRONMENT
+          enum: [dev, staging, prod]
+    cmds:
+      - 'echo "You entered APP_NAME: {{.APP_NAME}} and ENVIRONMENT: {{.ENVIRONMENT}}"'
+
+
   build:
     desc: Build the application
     aliases: [b, bld]
     cmds:
       - echo "Building {{.APP_NAME}}..."
-  
+
   build:*:
     vars:
       APP_NAME: '{{index .MATCH 0}}'
@@ -52,4 +68,3 @@ tasks:
   ci:
     desc: Run the full CI pipeline
     deps: [build, test, lint]
-
