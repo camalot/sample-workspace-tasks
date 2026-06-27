@@ -10,18 +10,16 @@ tasks:
     desc: Print a greeting message
     cmds:
       - echo "{{.GREETING}}"
-    silent: true
+    silent: false
 
-  # Simple string format
-  hello: echo "Hello World"
-
-  # Array format
-  build:
-    - go mod tidy
-    - go build ./...
-
-  # Full object format
-  deploy:
-    desc: Deploy the application...
+  start:*:*:
+    vars:
+      SERVICE: '{{index .MATCH 0}}'
+      REPLICAS: '{{index .MATCH 1}}'
     cmds:
-      - echo "Deploying the application..."
+      - echo "Starting {{.SERVICE}} with {{.REPLICAS}} replicas"
+
+  withArgs:
+    desc: Run a command with arguments
+    cmds:
+      - 'echo "Running with arguments: {{.CLI_ARGS}}"'
