@@ -53,5 +53,5 @@
   "workspaceTasks.taskDiscovery.fetchDepth": 4,
   "workspaceTasks.task.guidedArgInput": true,
   "workspaceTasks.groups.taskSeparatorIsRegex": true,
-  "workspaceTasks.groups.taskSeparator": ":|/|-|\\s"
+  "workspaceTasks.groups.taskSeparator": ":|/|-"
 }
