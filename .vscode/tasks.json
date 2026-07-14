@@ -213,17 +213,18 @@
     },
     {
       "label": "Dependee 1",
-      "command": "echo hello"
+      "type": "shell",
+      "command": "echo 'hello'",
     },
     {
       "label": "Dependee 2",
       "type": "shell",
-      "command": "echo hello"
+      "command": "echo 'hello'",
     },
     {
       "label": "My Task",
       "type": "shell",
-      "command": "echo hello",
+      "command": "echo 'hello'",
       "dependsOn": [
           "Dependee 1",
           "Dependee 2"
@@ -232,7 +233,7 @@
     {
       "label": "My Group - My Task",
       "type": "shell",
-      "command": "echo hello",
+      "command": "echo 'hello'",
       "dependsOn": [
         "Dependee 1",
         "Dependee 2"
