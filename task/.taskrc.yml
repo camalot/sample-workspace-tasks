@@ -1,0 +1,6 @@
+---
+remote:
+  trusted-hosts:
+    - github.com
+  cache-dir: .task
+temp-dir: .task

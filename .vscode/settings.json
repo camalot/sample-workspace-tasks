@@ -53,5 +53,11 @@
   "workspaceTasks.taskDiscovery.fetchDepth": 4,
   "workspaceTasks.task.guidedArgInput": true,
   "workspaceTasks.groups.taskSeparatorIsRegex": true,
-  "workspaceTasks.groups.taskSeparator": ":|/|-"
+  "workspaceTasks.groups.taskSeparator": ":|/|-",
+  "terminal.integrated.fontFamily": "UbuntuMono Nerd Font",
+  "terminal.integrated.copyOnSelection": true,
+  "terminal.integrated.cursorBlinking": true,
+  "terminal.integrated.fontLigatures.enabled": true,
+  "terminal.integrated.fontSize": 16,
+  "terminal.integrated.lineHeight": 1.4
 }

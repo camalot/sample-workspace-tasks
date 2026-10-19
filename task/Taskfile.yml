@@ -8,6 +8,18 @@ version: '3'
 vars:
   APP_NAME: my-app
 
+includes:
+  # local:
+  #   taskfile: './Taskfile.local.yml'
+  codeql:
+    # as git over ssh
+    taskfile: 'git@github.com:camalot/actions.git//smells/codeql/TaskFile.yml?ref=v1'
+    # as https
+    # taskfile: https://github.com/camalot/actions/raw/refs/heads/main/smells/codeql/TaskFile.yml
+    # as git over https
+    # taskfile: https://github.com/camalot/actions.git//smells/codeql/TaskFile.yml?ref=v1
+    flatten: true
+
 tasks:
   default:
     desc: Print a greeting message
